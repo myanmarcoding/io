@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myanmar Coding - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" href="MC.png" type="image/x-icon">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #373737;
+            line-height: 1.6;
+            background-color: #E6E6E6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #000000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 24px;
+            color: #E6E6E6;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #373737;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #E6E6E6;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: #000000;
+            background-color: #E6E6E6;
+        }
+
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #E6E6E6;
+            margin: 4px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background-color: #000000;
+                padding: 10px 0;
+                margin-top: 10px;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 10px;
+                border-radius: 0;
+            }
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        section {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: #000000;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #373737;
+        }
+
+        /* Button Styles */
+        button {
+            background-color: #000000;
+            color: #E6E6E6;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #373737;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #E6E6E6;
+            background-color: #000000;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #E6E6E6;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: text-decoration 0.3s ease;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Myanmar Coding</a>
+        <div class="hamburger" onclick="toggleNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="shop.html">Shop</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>  
+        <section>
+            <h2>Regular Domains (New Registrations)</h2>
+            <p>Affordable domain registrations starting at just $1 for special deals on extensions like .xyz, .online, and .site. Standard .com domains are priced between $10 and $20 annually. Country-specific domains (.mm, .us, .uk, etc.) range from $10 to $50+ per year.</p>
+            <a href="info.html">
+            <button>Buy Now</button>
+            </a>
+        </section>
+
+        <section>
+            <h2>Premium & Expired Domains</h2>
+            <p>Premium domains, including short, brandable, or dictionary-word domains, can range from $100 to millions of dollars based on demand. Expired domains, previously registered but not renewed, are available starting at $50 and can go up to $500+.</p>
+            <a href="info.html">
+            <button>Buy Now</button>
+            </a>
+        </section>
+
+        <section>
+            <h2>Web Hosting Services</h2>
+            <p>Reliable and scalable web hosting solutions tailored to your needs. Choose from shared hosting, VPS, or dedicated servers. Prices start at just $5/month with 99.9% uptime and 24/7 support.</p>
+            <a href="info.html">
+            <button>Buy Now</button>
+            </a>
+        </section>
+
+        <section>
+            <h2>SEO & Digital Marketing</h2>
+            <p>Boost your online presence with our expert SEO and digital marketing services. We optimize your website for search engines, manage ad campaigns, and provide analytics to grow your business. Packages start at $100/month.</p>
+            <a href="info.html">
+            <button>Buy Now</button>
+            </a>
+        </section>
+
+        <section>
+            <h2>Maintenance & Support</h2>
+            <p>Keep your website running smoothly with our maintenance and support plans. We offer monthly packages starting at $50 for updates, backups, and technical support.</p>
+            <a href="info.html">
+            <button>Buy Now</button>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 Myanmar Coding. All rights reserved.
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a> |
+            <a href="https://www.tiktok.com/@myanmarcoding">TikTok</a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('nav');
+            const hamburger = document.querySelector('.hamburger');
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

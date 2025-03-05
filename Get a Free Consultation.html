@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myanmar Coding - Get a Free Consultation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" href="MC.png" type="image/x-icon"/>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #373737;
+            line-height: 1.6;
+            background-color: #E6E6E6;
+        }
+
+        header {
+            background-color: #000000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 24px;
+            color: #E6E6E6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #373737;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #E6E6E6;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: #000000;
+            background-color: #E6E6E6;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #E6E6E6;
+            margin: 4px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background-color: #000000;
+                padding: 10px 0;
+                margin-top: 10px;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 10px;
+                border-radius: 0;
+            }
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        h2, h3 {
+            color: #000000;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #373737;
+        }
+
+        ol, ul {
+            padding-left: 20px;
+            color: #373737;
+        }
+
+        ol li, ul li {
+            margin-bottom: 10px;
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background: #000000;
+            margin: 40px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            color: #E6E6E6;
+            background-color: #000000;
+        }
+
+        footer a {
+            color: #E6E6E6;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Myanmar Coding</a>
+        <div class="hamburger" onclick="toggleNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="shop.html">Shop</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Let’s Bring Your Website Ideas to Life – Start with a Free Consultation!</h1>
+            <p>Schedule a free, no-obligation consultation to discuss your vision, goals, and how we can create a stunning website design tailored to your business.</p>
+            <p>At Myanmar Coding, we believe every great website starts with a clear vision. That’s why we offer a <strong>free consultation</strong> to understand your needs, share our expertise, and provide you with a roadmap for your project.</p>
+            <p>During your consultation, you’ll get:</p>
+            <ol>
+                <li><strong>Expert Advice</strong>: Our team will listen to your ideas and provide professional insights on design, functionality, and user experience.</li>
+                <li><strong>Customized Proposal</strong>: We’ll outline how we can bring your vision to life with a tailored website design.</li>
+                <li><strong>No Obligations</strong>: This is a no-pressure conversation—our goal is to help you understand your options and make an informed decision.</li>
+            </ol>
+            <p>Please note: This consultation is <strong>not a free website build.</strong> It’s an opportunity for us to discuss your project, provide guidance, and create a plan that works for you.</p>
+        </section>
+    </main>
+    <hr>
+
+    <main>
+        <section>
+            <h1>Why Choose Us?</h1>
+            <ul>
+                <li><strong>Creative Designers</strong>: Our team specializes in creating visually stunning and user-friendly website designs.</li>
+                <li><strong>Client-Focused Approach</strong>: We work closely with you to ensure your vision is brought to life.</li>
+                <li><strong>Proven Results</strong>: We’ve designed websites for businesses like yours—let us help you stand out online!</li>
+            </ul>
+        </section>
+    </main>
+    <hr>
+
+    <main>
+        <section>
+            <h1>FAQ:</h1>
+            <h3>Q: Is the consultation really free?</h3>
+            <p>A: Yes, absolutely! The consultation is completely free and comes with no obligations.</p>
+            <h3>Q: Will you build my website for free during the consultation?</h3>
+            <p>A: No, the consultation is a discussion to understand your needs and provide a proposal. The actual design and development work will begin once we agree on a plan.</p>
+            <h3>Q: What should I prepare for the consultation?</h3>
+            <p>A: Bring your ideas, goals, and any examples of websites you like. The more information you provide, the better we can tailor our advice to your needs.</p>
+            <h3>Q: How long is the consultation?</h3>
+            <p>A: Typically 30 minutes to 1 hour, depending on your needs.</p>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 Myanmar Coding. All rights reserved.
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a> |
+            <a href="https://www.tiktok.com/@myanmarcoding">Tiktok</a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('nav');
+            const hamburger = document.querySelector('.hamburger');
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
