@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myanmar Earthquake Alert & Safety Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#EF594A">
+    <link rel="icon" href="0-02-06-9789ad94ba9a7e365a0982101f83c1962796a339657f29905c16543935388540_65ff719980b75efe.jpg" type="image/x-icon"/>
+    <style>
+        :root {
+            --primary: #EF594A;
+            --secondary: #F75852;
+            --light: #FCAEAC;
+            --dark: #D32F2F;
+            --text: #2D3748;
+            --white: #FFFFFF;
+            --safe: #4CAF50;
+            --warning: #FFC107;
+            --danger: #F44336;
+            --background: #f8f9fa;
+            --card-bg: #FFFFFF;
+            --border-radius: 12px;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-title {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        #earthquakeList {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .quake {
+            background: var(--card-bg);
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .quake:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .quake strong {
+            color: var(--primary);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quake-magnitude {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            color: white;
+        }
+        
+        .quake-time {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+        .quake-location {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 0.3rem;
+            font-size: 0.9rem;
+        }
+        
+        .no-quakes {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        nav {
+            background-color: #000000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            color: #E6E6E6;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+        .logo:hover {
+            color: var(--primary);
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #E6E6E6;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: var(--transition);
+            border-radius: 5px;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+            background-color: rgba(255,255,255,0.1);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #E6E6E6;
+            margin: 4px 0;
+            transition: var(--transition);
+        }
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background-color: #000000;
+                padding: 10px 0;
+                margin-top: 10px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a {
+                padding: 10px;
+                border-radius: 0;
+            }
+        }
+        
+        .qa-item, .shopping-item, .contact-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .qa-item:last-child, .shopping-item:last-child, .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .qa-item strong, .shopping-item strong, .contact-item strong {
+            color: var(--primary);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .last-updated {
+            text-align: right;
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+        
+        .alert-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--danger);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-100px);
+            transition: var(--transition);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            max-width: 90%;
+        }
+        
+        .alert-badge.show {
+            transform: translateY(0);
+        }
+        
+        .shopping-list, .contact-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        
+        .shopping-item, .contact-item {
+            background: #f9f9f9;
+            padding: 1.2rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .shopping-item:hover, .contact-item:hover {
+            transform: scale(1.02);
+            background: #f0f0f0;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.5rem;
+            color: #666;
+        }
+        
+        .tab-container {
+            display: flex;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            overflow-x: auto;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .tab-container::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+        
+        .tab {
+            padding: 0.8rem 1.2rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+            white-space: nowrap;
+            font-weight: 500;
+        }
+        
+        .tab.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.2rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .btn:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #666;
+        }
+        
+        .btn-secondary:hover {
+            background: #444;
+        }
+        
+        .map-container {
+            height: 400px;
+            width: 100%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-top: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .tsunami-warning {
+            background: var(--danger);
+            color: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 89, 74, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 89, 74, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 89, 74, 0); }
+        }
+        
+        .tsunami-warning i {
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(239, 89, 74, 0.2);
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .quake-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+        
+        .quake-depth {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .severity-indicator {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to right, var(--safe), var(--warning), var(--danger));
+            margin: 0.5rem 0;
+            position: relative;
+        }
+        
+        .severity-marker {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: white;
+            border: 2px solid var(--danger);
+            border-radius: 50%;
+            top: -2px;
+            transform: translateX(-50%);
+        }
+        
+        .severity-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #666;
+        }
+        
+        .pwa-install-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .pwa-install-btn:hover {
+            background: var(--dark);
+            transform: scale(1.1);
+        }
+        
+        .offline-notice {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--warning);
+            color: #000;
+            padding: 0.8rem;
+            text-align: center;
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+        
+        .offline-notice.show {
+            transform: translateY(0);
+        }
+        
+        .quake-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+        
+        .action-btn {
+            padding: 0.3rem 0.6rem;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            background: #f0f0f0;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .action-btn:hover {
+            background: #e0e0e0;
+        }
+        
+        .action-btn i {
+            font-size: 0.7rem;
+        }
+        
+        .search-container {
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .search-container input {
+            flex: 1;
+        }
+        
+        .filter-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.85rem;
+        }
+        
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0.5rem 0;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .footer {
+            background: #222;
+            color: #eee;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            transition: var(--transition);
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                padding: 0 1rem;
+            }
+            
+            .card {
+                padding: 1.2rem;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .shopping-list, .contact-list, .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        /* Dark mode styles */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text: #E0E0E0;
+                --background: #121212;
+                --card-bg: #1E1E1E;
+            }
+            
+            body {
+                background: var(--background);
+                color: var(--text);
+            }
+            
+            .card {
+                background: var(--card-bg);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            }
+            
+            .quake-time, .quake-depth {
+                color: #aaa;
+            }
+            
+            .shopping-item, .contact-item {
+                background: #252525;
+            }
+            
+            input, select, textarea {
+                background: #252525;
+                border-color: #444;
+                color: var(--text);
+            }
+            
+            .action-btn {
+                background: #333;
+                color: var(--text);
+            }
+            
+            .action-btn:hover {
+                background: #444;
+            }
+            
+            .filter-btn {
+                background: #333;
+                color: var(--text);
+            }
+            
+            .footer {
+                background: #111;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Myanmar Coding</a>
+        <div class="hamburger" onclick="toggleNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        </div>
+    </nav>
+    
+    <div class="header">
+        <h1><i class="fas fa-exclamation-triangle"></i> Myanmar Earthquake Alert</h1>
+        <p class="subtitle">Real-time seismic monitoring & safety information</p>
+    </div>
+    
+    <main>
+        <div class="card">
+            <div class="tab-container">
+                <div class="tab active" data-tab="quakes"><i class="fas fa-list"></i> Earthquakes</div>
+                <div class="tab" data-tab="shelters"><i class="fas fa-map-marker-alt"></i> Shelters</div>
+                <div class="tab" data-tab="report"><i class="fas fa-edit"></i> Report</div>
+                <div class="tab" data-tab="stats"><i class="fas fa-chart-bar"></i> Statistics</div>
+            </div>
+            
+            <div class="tab-content active" id="quakes">
+                <h2 class="card-title"><i class="fas fa-list"></i> Recent Earthquakes in Myanmar</h2>
+                
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search by location...">
+                    <button class="btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="filter-container">
+                    <button class="filter-btn active" data-mag="all">All</button>
+                    <button class="filter-btn" data-mag="4">M4.0+</button>
+                    <button class="filter-btn" data-mag="5">M5.0+</button>
+                    <button class="filter-btn" data-mag="6">M6.0+</button>
+                    <button class="filter-btn" data-mag="last24">Last 24h</button>
+                </div>
+                
+                <div id="earthquakeList">
+                    <div class="loading-container">
+                        <div class="loading"></div>
+                        <span>Loading earthquake data...</span>
+                    </div>
+                </div>
+                <div class="last-updated" id="lastUpdated"></div>
+            </div>
+            
+            <div class="tab-content" id="shelters">
+                <h2 class="card-title"><i class="fas fa-map-marker-alt"></i> Emergency Shelters</h2>
+                <p>Safe locations near you in case of evacuation. Click on a shelter to get directions.</p>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15282225.79979123!2d93.17402502747288!3d20.788347752178423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1semergency%20shelters%20in%20myanmar!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                
+                <div class="shelter-list" style="margin-top: 1.5rem;">
+                    <div class="shelter-item">
+                        <strong><i class="fas fa-building"></i> Yangon City Hall</strong>
+                        <p>No. 1, Maha Bandula Road, Yangon</p>
+                        <p><i class="fas fa-phone"></i> +95 1 123456</p>
+                    </div>
+                    <div class="shelter-item">
+                        <strong><i class="fas fa-school"></i> Mandalay Central School</strong>
+                        <p>27th Street, Between 64th & 65th, Mandalay</p>
+                        <p><i class="fas fa-phone"></i> +95 2 234567</p>
+                    </div>
+                    <div class="shelter-item">
+                        <strong><i class="fas fa-hospital"></i> Naypyidaw General Hospital</strong>
+                        <p>Zabuthiri Township, Naypyidaw</p>
+                        <p><i class="fas fa-phone"></i> +95 67 345678</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="report">
+                <h2 class="card-title"><i class="fas fa-edit"></i> Report Damage</h2>
+                <p>Help authorities by reporting earthquake damage in your area. All reports are anonymous.</p>
+                
+                <form id="damageReportForm">
+                    <div class="form-group">
+                        <label for="location"><i class="fas fa-map-pin"></i> Your Location (Township/City)</label>
+                        <input type="text" id="location" required placeholder="e.g. Yangon, Mandalay">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="damageType"><i class="fas fa-exclamation-triangle"></i> Type of Damage</label>
+                        <select id="damageType" required>
+                            <option value="">Select damage type</option>
+                            <option value="building">Building Damage</option>
+                            <option value="road">Road Damage</option>
+                            <option value="utility">Utility Outage (Water/Electricity)</option>
+                            <option value="injury">Injuries</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="severity"><i class="fas fa-bolt"></i> Severity</label>
+                        <div class="severity-indicator">
+                            <div class="severity-marker" id="severityMarker"></div>
+                        </div>
+                        <div class="severity-labels">
+                            <span>Minor</span>
+                            <span>Moderate</span>
+                            <span>Severe</span>
+                        </div>
+                        <input type="range" id="severity" min="1" max="10" value="5" style="width: 100%; margin-top: 0.5rem;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description"><i class="fas fa-align-left"></i> Description</label>
+                        <textarea id="description" placeholder="Please describe the damage in detail..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="photo"><i class="fas fa-camera"></i> Upload Photo (Optional)</label>
+                        <input type="file" id="photo" accept="image/*">
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Submit Report</button>
+                        <button type="reset" class="btn btn-secondary"><i class="fas fa-undo"></i> Reset</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="tab-content" id="stats">
+                <h2 class="card-title"><i class="fas fa-chart-bar"></i> Earthquake Statistics</h2>
+                <p>Historical and recent seismic activity in Myanmar</p>
+                
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-label">Today's Earthquakes</div>
+                        <div class="stat-value" id="todayQuakes">0</div>
+                        <div class="stat-label">in Myanmar region</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-label">Strongest Today</div>
+                        <div class="stat-value" id="strongestToday">-</div>
+                        <div class="stat-label">magnitude</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-label">Last 7 Days</div>
+                        <div class="stat-value" id="weeklyQuakes">0</div>
+                        <div class="stat-label">total quakes</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-label">Average Depth</div>
+                        <div class="stat-value" id="avgDepth">-</div>
+                        <div class="stat-label">kilometers</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1.5rem;">
+                    <canvas id="quakeChart" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-question-circle"></i> Earthquake Safety Guide</h2>
+            
+            <div class="qa-item">
+                <strong><i class="fas fa-question"></i> What causes earthquakes in Myanmar?</strong>
+                <p>Myanmar sits on the complex collision zone between the Indian and Eurasian tectonic plates, making it highly prone to seismic activity. The Sagaing Fault, running north-south through the country, is particularly active.</p>
+            </div>
+            
+            <div class="qa-item">
+                <strong><i class="fas fa-running"></i> What should I do during an earthquake?</strong>
+                <p><b>Drop, Cover, and Hold On!</b> Stay indoors, avoid windows, and protect your head under sturdy furniture. If outside, move to an open area away from buildings, trees, and power lines. If driving, pull over and stay in your vehicle.</p>
+            </div>
+            
+            <div class="qa-item">
+                <strong><i class="fas fa-home"></i> How can I prepare my home?</strong>
+                <p>Secure heavy furniture to walls, install earthquake latches on cabinets, know how to shut off gas, water, and electricity. Create a family emergency plan and practice earthquake drills regularly.</p>
+            </div>
+            
+            <div class="qa-item">
+                <strong><i class="fas fa-chart-line"></i> What magnitude is dangerous?</strong>
+                <p>
+                    <span style="color: var(--safe)">3.0-3.9</span> - Often felt but rarely causes damage<br>
+                    <span style="color: var(--warning)">4.0-4.9</span> - Noticeable shaking of indoor items<br>
+                    <span style="color: var(--danger)">5.0-5.9</span> - Can cause major damage to poorly constructed buildings<br>
+                    <span style="color: var(--danger); font-weight: bold">6.0+</span> - Can be destructive in areas up to 100km across
+                </p>
+            </div>
+            
+            <div class="qa-item">
+                <strong><i class="fas fa-history"></i> Are aftershocks dangerous?</strong>
+                <p>Yes! Aftershocks can occur for days, weeks, or even months after a major quake and may cause further damage to weakened structures. Be prepared for them.</p>
+            </div>
+            
+            <div class="qa-item">
+                <strong><i class="fas fa-water"></i> What about tsunami risk?</strong>
+                <p>Coastal areas of Myanmar are at risk. If you feel strong shaking near the coast, see the ocean recede unusually far, or hear a loud roar from the ocean, move to high ground (at least 15 meters) immediately.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-shopping-basket"></i> Earthquake Emergency Kit</h2>
+            <p style="margin-bottom: 1.5rem;">Every household in Myanmar should have these essentials. Check items you have:</p>
+            
+            <div class="shopping-list">
+                <div class="shopping-item">
+                    <strong><i class="fas fa-bottle-water"></i> Water (3+ days supply)</strong>
+                    <p>At least 4 liters per person per day. Include water purification tablets.</p>
+                    <label><input type="checkbox"> I have this</label>
+                </div>
+                
+                <div class="shopping-item">
+                    <strong><i class="fas fa-utensils"></i> Non-perishable food</strong>
+                    <p>3+ day supply of canned goods, energy bars, dry food that needs no cooking.</p>
+                    <label><input type="checkbox"> I have this</label>
+                </div>
+                
+                <div class="shopping-item">
+                    <strong><i class="fas fa-first-aid"></i> First aid kit</strong>
+                    <p>Bandages, antiseptics, prescription medicines, pain relievers.</p>
+                    <label><input type="checkbox"> I have this</label>
+                </div>
+                
+                <div class="shopping-item">
+                    <strong><i class="fas fa-lightbulb"></i> Flashlight + batteries</strong>
+                    <p>Power outages are common after quakes. Include extra batteries.</p>
+                    <label><input type="checkbox"> I have this</label>
+                </div>
+                
+                <div class="shopping-item">
+                    <strong><i class="fas fa-phone-alt"></i> Portable charger</strong>
+                    <p>Solar or battery-powered charger to keep phones working.</p>
+                    <label><input type="checkbox"> I have this</label>
+                </div>
+                
+                <div class="shopping-item">
+                    <strong><i class="fas fa-file-alt"></i> Important documents</strong>
+                    <p>Copies of IDs, insurance, bank info in waterproof container.</p>
+                    <label><input type="checkbox"> I have this</label>
+                </div>
+                
+                <div class="shopping-item">
+                    <strong><i class="fas fa-tshirt"></i> Extra clothing</strong>
+                    <p>Warm clothes, rain gear, sturdy shoes, blankets.</p>
+                    <label><input type="checkbox"> I have this</label>
+                </div>
+                
+                <div class="shopping-item">
+                    <strong><i class="fas fa-toilet-paper"></i> Hygiene supplies</strong>
+                    <p>Sanitary items, toilet paper, hand sanitizer, garbage bags.</p>
+                    <label><input type="checkbox"> I have this</label>
+                </div>
+                
+                <div class="shopping-item">
+                    <strong><i class="fas fa-tools"></i> Basic tools</strong>
+                    <p>Wrench (for turning off utilities), whistle, dust masks, gloves.</p>
+                    <label><input type="checkbox"> I have this</label>
+                </div>
+                
+                <div class="shopping-item">
+                    <strong><i class="fas fa-money-bill-wave"></i> Emergency cash</strong>
+                    <p>Small bills in case ATMs aren't working after disaster.</p>
+                    <label><input type="checkbox"> I have this</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-phone-alt"></i> Emergency Contacts</h2>
+            
+            <div class="contact-list">
+                <div class="contact-item">
+                    <strong><i class="fas fa-ambulance"></i> Emergency Services</strong>
+                    <p><i class="fas fa-phone"></i> 199 (Police, Fire, Ambulance)</p>
+                    <button class="action-btn call-btn" data-number="199"><i class="fas fa-phone"></i> Call</button>
+                </div>
+                
+                <div class="contact-item">
+                    <strong><i class="fas fa-hospital"></i> Ministry of Health</strong>
+                    <p><i class="fas fa-phone"></i> +95 67 341 0280</p>
+                    <button class="action-btn call-btn" data-number="+95673410280"><i class="fas fa-phone"></i> Call</button>
+                </div>
+                
+                <div class="contact-item">
+                    <strong><i class="fas fa-building"></i> Disaster Management</strong>
+                    <p><i class="fas fa-phone"></i> +95 67 341 0281</p>
+                    <button class="action-btn call-btn" data-number="+95673410281"><i class="fas fa-phone"></i> Call</button>
+                </div>
+                
+                <div class="contact-item">
+                    <strong><i class="fas fa-mountain"></i> Myanmar Earthquake Committee</strong>
+                    <p><i class="fas fa-phone"></i> +95 1 656 112</p>
+                    <button class="action-btn call-btn" data-number="+951656112"><i class="fas fa-phone"></i> Call</button>
+                </div>
+                
+                <div class="contact-item">
+                    <strong><i class="fas fa-globe-asia"></i> Myanmar Red Cross</strong>
+                    <p><i class="fas fa-phone"></i> +95 1 383 642</p>
+                    <button class="action-btn call-btn" data-number="+951383642"><i class="fas fa-phone"></i> Call</button>
+                </div>
+                
+                <div class="contact-item">
+                    <strong><i class="fas fa-helicopter"></i> Search & Rescue</strong>
+                    <p><i class="fas fa-phone"></i> +95 67 410 999</p>
+                    <button class="action-btn call-btn" data-number="+9567410999"><i class="fas fa-phone"></i> Call</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-check-circle"></i> Post-Earthquake Checklist</h2>
+            
+            <div class="qa-item">
+                <strong><i class="fas fa-user-injured"></i> Immediately After:</strong>
+                <p>Check yourself and others for injuries. Provide first aid if trained. Be prepared for aftershocks. Check for damage to your home's structure.</p>
+            </div>
+            
+            <div class="qa-item">
+                <strong><i class="fas fa-tools"></i> Utilities:</strong>
+                <p>Check for gas leaks (smell, hissing sound). If you suspect a leak, open windows and shut off main valve. Look for electrical system damage and sparking wires. Check water/sewer lines for damage.</p>
+            </div>
+            
+            <div class="qa-item">
+                <strong><i class="fas fa-broadcast-tower"></i> Communication:</strong>
+                <p>Listen to battery-powered radio for updates. Use text messages instead of calls to keep lines open for emergencies. Check social media for official updates.</p>
+            </div>
+            
+            <div class="qa-item">
+                <strong><i class="fas fa-sign-out-alt"></i> Evacuation:</strong>
+                <p>If your home is unsafe, move to a designated shelter. Bring your emergency kit. Leave a note about where you've gone if possible.</p>
+            </div>
+            
+            <div class="qa-item">
+                <strong><i class="fas fa-exclamation-triangle"></i> Hazards:</strong>
+                <p>Watch out for fallen objects, broken glass, and damaged structures. Be cautious of landslides in hilly areas. Avoid beaches due to potential tsunamis.</p>
+            </div>
+        </div>
+    </main>
+    
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+            <div class="footer-section">
+                <h3>Emergency Contacts</h3>
+                <ul>
+                    <li><a href="tel:199"><i class="fas fa-phone"></i> Emergency: 199</a></li>
+                    <li><a href="tel:+95673410280"><i class="fas fa-hospital"></i> Health Ministry</a></li>
+                    <li><a href="tel:+951656112"><i class="fas fa-mountain"></i> Earthquake Committee</a></li>
+                    <li><a href="tel:+951383642"><i class="fas fa-plus-square"></i> Red Cross</a></li>
+                </ul>
+            </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Myanmar Coding. All rights reserved.</p>
+        </div>
+    </div>
+    
+    <div class="alert-badge" id="alertBadge">
+        <i class="fas fa-bell"></i> <span id="alertText">New Earthquake Alert!</span>
+    </div>
+    
+    <button class="pwa-install-btn" id="installBtn" title="Install App">
+        <i class="fas fa-download"></i>
+    </button>
+    
+    <div class="offline-notice" id="offlineNotice">
+        <i class="fas fa-wifi"></i> You are currently offline. Some features may not be available.
+    </div>
+
+    <!-- Audio elements for alerts -->
+    <audio id="alertSoundModerate" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3" preload="auto"></audio>
+    <audio id="alertSoundStrong" src="https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-alarm-905.mp3" preload="auto"></audio>
+    
+    <!-- Chart.js for statistics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        // DOM elements
+        const earthquakeList = document.getElementById('earthquakeList');
+        const lastUpdatedEl = document.getElementById('lastUpdated');
+        const alertBadge = document.getElementById('alertBadge');
+        const alertText = document.getElementById('alertText');
+        const alertSoundModerate = document.getElementById('alertSoundModerate');
+        const alertSoundStrong = document.getElementById('alertSoundStrong');
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const damageReportForm = document.getElementById('damageReportForm');
+        const severitySlider = document.getElementById('severity');
+        const severityMarker = document.getElementById('severityMarker');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const installBtn = document.getElementById('installBtn');
+        const installBtnFooter = document.getElementById('installBtnFooter');
+        const offlineNotice = document.getElementById('offlineNotice');
+        const todayQuakesEl = document.getElementById('todayQuakes');
+        const strongestTodayEl = document.getElementById('strongestToday');
+        const weeklyQuakesEl = document.getElementById('weeklyQuakes');
+        const avgDepthEl = document.getElementById('avgDepth');
+        
+        // Configuration
+        const REFRESH_INTERVAL = 300000; // 5 minutes
+        const MIN_ALERT_MAGNITUDE = 4.0;
+        const STRONG_QUAKE_MAGNITUDE = 5.5;
+        const MYANMAR_BOUNDS = {
+            north: 28.5,
+            south: 9.5,
+            west: 92.0,
+            east: 101.0
+        };
+        
+        // Colors for different magnitudes
+        const MAGNITUDE_COLORS = {
+            minor: '#4CAF50',
+            light: '#FFC107',
+            moderate: '#FF9800',
+            strong: '#F44336',
+            major: '#9C27B0',
+            great: '#E91E63'
+        };
+        
+        // Global variables
+        let quakeData = [];
+        let deferredPrompt = null;
+        let quakeChart = null;
+        
+        // Initialize the app
+        function init() {
+            setupEventListeners();
+            updateSeverityMarker();
+            fetchEarthquakes();
+            checkConnectivity();
+            
+            // Set up periodic refresh
+            setInterval(fetchEarthquakes, REFRESH_INTERVAL);
+            
+            // Request notification permission
+            requestNotificationPermission();
+            
+            // Check for PWA install prompt
+            setupPWAInstall();
+        }
+        
+        // Set up event listeners
+        function setupEventListeners() {
+            // Tab switching
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                    
+                    // Initialize chart if stats tab is selected
+                    if (tab.dataset.tab === 'stats' && quakeData.length > 0) {
+                        initChart();
+                    }
+                });
+            });
+            
+            // Damage report form
+            damageReportForm.addEventListener('submit', handleDamageReport);
+            
+            // Severity slider
+            severitySlider.addEventListener('input', updateSeverityMarker);
+            
+            // Search functionality
+            searchBtn.addEventListener('click', filterQuakes);
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') filterQuakes();
+            });
+            
+            // Filter buttons
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterQuakes();
+                });
+            });
+            
+            // Call buttons
+            document.querySelectorAll('.call-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const number = e.target.closest('.call-btn').dataset.number;
+                    window.open(`tel:${number}`);
+                });
+            });
+            
+            // Online/offline detection
+            window.addEventListener('online', () => {
+                offlineNotice.classList.remove('show');
+                fetchEarthquakes();
+            });
+            
+            window.addEventListener('offline', () => {
+                offlineNotice.classList.add('show');
+            });
+            
+            // PWA install buttons
+            installBtn.addEventListener('click', installPWA);
+            installBtnFooter.addEventListener('click', installPWA);
+        }
+        
+        // Update severity marker position
+        function updateSeverityMarker() {
+            const value = severitySlider.value;
+            const percent = (value / 10) * 100;
+            severityMarker.style.left = `${percent}%`;
+        }
+        
+        // Handle damage report submission
+        function handleDamageReport(e) {
+            e.preventDefault();
+            
+            const location = document.getElementById('location').value;
+            const damageType = document.getElementById('damageType').value;
+            const severity = severitySlider.value;
+            const description = document.getElementById('description').value;
+            
+            // In a real app, you would send this to a server
+            console.log('Damage report submitted:', {
+                location,
+                damageType,
+                severity,
+                description
+            });
+            
+            // Show confirmation
+            alert('Thank you for your report. Authorities have been notified.');
+            
+            // Reset form
+            damageReportForm.reset();
+            updateSeverityMarker();
+        }
+        
+        // Filter earthquakes based on search and filters
+        function filterQuakes() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const activeFilter = document.querySelector('.filter-btn.active').dataset.mag;
+            const now = Date.now();
+            const twentyFourHoursAgo = now - (24 * 60 * 60 * 1000);
+            const sevenDaysAgo = now - (7 * 24 * 60 * 60 * 1000);
+            
+            let filteredQuakes = quakeData;
+            
+            // Apply search filter
+            if (searchTerm) {
+                filteredQuakes = filteredQuakes.filter(q => 
+                    q.properties.place.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            // Apply magnitude filter
+            switch (activeFilter) {
+                case '4':
+                    filteredQuakes = filteredQuakes.filter(q => q.properties.mag >= 4.0);
+                    break;
+                case '5':
+                    filteredQuakes = filteredQuakes.filter(q => q.properties.mag >= 5.0);
+                    break;
+                case '6':
+                    filteredQuakes = filteredQuakes.filter(q => q.properties.mag >= 6.0);
+                    break;
+                case 'last24':
+                    filteredQuakes = filteredQuakes.filter(q => q.properties.time >= twentyFourHoursAgo);
+                    break;
+            }
+            
+            // Update stats
+            updateStats(filteredQuakes);
+            
+            // Display filtered quakes
+            displayEarthquakes(filteredQuakes);
+        }
+        
+        // Update statistics display
+        function updateStats(quakes) {
+            const now = Date.now();
+            const twentyFourHoursAgo = now - (24 * 60 * 60 * 1000);
+            const sevenDaysAgo = now - (7 * 24 * 60 * 60 * 1000);
+            
+            // Today's quakes
+            const todayQuakes = quakes.filter(q => q.properties.time >= twentyFourHoursAgo).length;
+            todayQuakesEl.textContent = todayQuakes;
+            
+            // Strongest today
+            const todayStrongest = quakes.filter(q => q.properties.time >= twentyFourHoursAgo)
+                .reduce((max, q) => q.properties.mag > max ? q.properties.mag : max, 0);
+            strongestTodayEl.textContent = todayStrongest > 0 ? todayStrongest.toFixed(1) : '-';
+            
+            // Weekly quakes
+            const weeklyQuakes = quakes.filter(q => q.properties.time >= sevenDaysAgo).length;
+            weeklyQuakesEl.textContent = weeklyQuakes;
+            
+            // Average depth
+            const depths = quakes.map(q => q.geometry.coordinates[2]);
+            const avgDepth = depths.length > 0 ? 
+                (depths.reduce((sum, depth) => sum + depth, 0) / depths.length) : 0;
+            avgDepthEl.textContent = avgDepth > 0 ? avgDepth.toFixed(1) : '-';
+            
+            // Initialize or update chart
+            if (document.getElementById('stats').classList.contains('active')) {
+                if (quakeChart) {
+                    updateChart();
+                } else {
+                    initChart();
+                }
+            }
+        }
+        
+        // Initialize the chart
+        function initChart() {
+            const ctx = document.getElementById('quakeChart').getContext('2d');
+            
+            // Group by magnitude ranges
+            const magnitudeRanges = {
+                '1-2': quakeData.filter(q => q.properties.mag >= 1 && q.properties.mag < 2).length,
+                '2-3': quakeData.filter(q => q.properties.mag >= 2 && q.properties.mag < 3).length,
+                '3-4': quakeData.filter(q => q.properties.mag >= 3 && q.properties.mag < 4).length,
+                '4-5': quakeData.filter(q => q.properties.mag >= 4 && q.properties.mag < 5).length,
+                '5+': quakeData.filter(q => q.properties.mag >= 5).length
+            };
+            
+            quakeChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(magnitudeRanges),
+                    datasets: [{
+                        label: 'Number of Earthquakes',
+                        data: Object.values(magnitudeRanges),
+                        backgroundColor: [
+                            '#4CAF50',
+                            '#8BC34A',
+                            '#FFC107',
+                            '#FF9800',
+                            '#F44336'
+                        ],
+                        borderColor: [
+                            '#388E3C',
+                            '#689F38',
+                            '#FFA000',
+                            '#F57C00',
+                            '#D32F2F'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Earthquakes by Magnitude (Last 30 Days)',
+                            font: {
+                                size: 16
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Earthquakes'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Magnitude Range'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Update the chart with new data
+        function updateChart() {
+            // Group by magnitude ranges
+            const magnitudeRanges = {
+                '1-2': quakeData.filter(q => q.properties.mag >= 1 && q.properties.mag < 2).length,
+                '2-3': quakeData.filter(q => q.properties.mag >= 2 && q.properties.mag < 3).length,
+                '3-4': quakeData.filter(q => q.properties.mag >= 3 && q.properties.mag < 4).length,
+                '4-5': quakeData.filter(q => q.properties.mag >= 4 && q.properties.mag < 5).length,
+                '5+': quakeData.filter(q => q.properties.mag >= 5).length
+            };
+            
+            quakeChart.data.datasets[0].data = Object.values(magnitudeRanges);
+            quakeChart.update();
+        }
+        
+        // Get magnitude color
+        function getMagnitudeColor(mag) {
+            if (mag < 3.0) return MAGNITUDE_COLORS.minor;
+            if (mag < 4.0) return MAGNITUDE_COLORS.light;
+            if (mag < 5.0) return MAGNITUDE_COLORS.moderate;
+            if (mag < 6.0) return MAGNITUDE_COLORS.strong;
+            if (mag < 7.0) return MAGNITUDE_COLORS.major;
+            return MAGNITUDE_COLORS.great;
+        }
+        
+        // Format date
+        function formatDate(timestamp) {
+            const date = new Date(timestamp);
+            return date.toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+        
+        // Format relative time (e.g., "2 hours ago")
+        function formatRelativeTime(timestamp) {
+            const now = Date.now();
+            const diff = now - timestamp;
+            const minutes = Math.floor(diff / (1000 * 60));
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+            
+            if (minutes < 1) return 'Just now';
+            if (minutes < 60) return `${minutes} minute${minutes === 1 ? '' : 's'} ago`;
+            if (hours < 24) return `${hours} hour${hours === 1 ? '' : 's'} ago`;
+            return `${days} day${days === 1 ? '' : 's'} ago`;
+        }
+        
+        // Show alert badge
+        function showAlertBadge(magnitude, location) {
+            alertText.textContent = `New Earthquake: M${magnitude.toFixed(1)} at ${location}`;
+            alertBadge.classList.add('show');
+            
+            // Vibrate if supported (for mobile devices)
+            if ('vibrate' in navigator) {
+                navigator.vibrate([200, 100, 200]);
+            }
+            
+            setTimeout(() => {
+                alertBadge.classList.remove('show');
+            }, 8000);
+        }
+        
+        // Play appropriate alert sound
+        function playAlertSound(magnitude) {
+            if (magnitude >= STRONG_QUAKE_MAGNITUDE) {
+                alertSoundStrong.play();
+            } else {
+                alertSoundModerate.play();
+            }
+        }
+        
+        // Open Google Maps with coordinates
+        function openMap(lat, lon) {
+            window.open(`https://www.google.com/maps/search/?api=1&query=${lat},${lon}`, '_blank');
+        }
+        
+        // Share earthquake info
+        function shareQuake(quake) {
+            const { place, mag, time } = quake.properties;
+            const text = `Earthquake Alert: M${mag} at ${place} on ${formatDate(time)}. More info: `;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Myanmar Earthquake Alert',
+                    text: text,
+                    url: window.location.href
+                }).catch(err => {
+                    console.log('Error sharing:', err);
+                    fallbackShare(text);
+                });
+            } else {
+                fallbackShare(text);
+            }
+        }
+        
+        // Fallback for browsers that don't support Web Share API
+        function fallbackShare(text) {
+            const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
+            window.open(shareUrl, '_blank');
+        }
+        
+        // Check if coordinates are within Myanmar bounds
+        function isInMyanmar(lon, lat) {
+            return lat >= MYANMAR_BOUNDS.south &&
+                    lat <= MYANMAR_BOUNDS.north &&
+                    lon >= MYANMAR_BOUNDS.west &&
+                    lon <= MYANMAR_BOUNDS.east;
+        }
+        
+        // Fetch earthquake data
+        async function fetchEarthquakes() {
+            try {
+                // Show loading state
+                earthquakeList.innerHTML = `
+                    <div class="loading-container">
+                        <div class="loading"></div>
+                        <span>Updating earthquake data...</span>
+                    </div>
+                `;
+                
+                // Try to fetch from USGS API
+                const response = await fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson');
+                
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                
+                const data = await response.json();
+                
+                // Filter for Myanmar earthquakes or nearby regions
+                quakeData = data.features.filter(q => {
+                    const [lon, lat] = q.geometry.coordinates;
+                    return q.properties.place.includes("Myanmar") ||
+                            q.properties.place.includes("Burma") ||
+                            isInMyanmar(lon, lat);
+                }).sort((a, b) => b.properties.time - a.properties.time);
+                
+                // Store in localStorage for offline use
+                localStorage.setItem('quakeData', JSON.stringify({
+                    data: quakeData,
+                    timestamp: Date.now()
+                }));
+                
+                // Update UI
+                updateLastUpdated();
+                filterQuakes();
+                
+                // Check for significant quakes to alert about
+                checkForSignificantQuakes(quakeData);
+                
+            } catch (error) {
+                console.error('Error fetching earthquake data:', error);
+                
+                // Try to load from cache if online fetch fails
+                const cachedData = localStorage.getItem('quakeData');
+                
+                if (cachedData) {
+                    const { data, timestamp } = JSON.parse(cachedData);
+                    quakeData = data;
+                    
+                    earthquakeList.innerHTML = `
+                        <div class="no-quakes">
+                            <p>Using cached data from ${formatDate(timestamp)}</p>
+                            <p>Network error - showing previously loaded earthquakes</p>
+                        </div>
+                    `;
+                    
+                    updateLastUpdated(timestamp);
+                    displayEarthquakes(quakeData);
+                } else {
+                    earthquakeList.innerHTML = `
+                        <div class="no-quakes">
+                            <p>Error loading earthquake data. Please check your connection and try again.</p>
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        // Display earthquakes in the UI
+        function displayEarthquakes(quakes) {
+            // Clear existing list
+            earthquakeList.innerHTML = '';
+            
+            // Handle no earthquakes case
+            if (quakes.length === 0) {
+                earthquakeList.innerHTML = '<div class="no-quakes">No earthquakes match your filters.</div>';
+                return;
+            }
+            
+            // Display earthquakes
+            quakes.forEach(quake => {
+                const { place, mag, time, detail } = quake.properties;
+                const [lon, lat, depth] = quake.geometry.coordinates;
+                const magColor = getMagnitudeColor(mag);
+                
+                const el = document.createElement('div');
+                el.className = 'quake';
+                el.innerHTML = `
+                    <strong>${place}</strong>
+                    <div class="quake-details">
+                        <span class="quake-magnitude" style="background: ${magColor}">M ${mag.toFixed(1)}</span>
+                        <span class="quake-time">${formatRelativeTime(time)}</span>
+                    </div>
+                    <div class="quake-location">
+                        <i class="fas fa-map-pin"></i> ${lat.toFixed(2)}°N, ${lon.toFixed(2)}°E
+                        <span class="quake-depth">• Depth: ${depth.toFixed(1)} km</span>
+                    </div>
+                    <div class="quake-actions">
+                        <button class="action-btn map-btn"><i class="fas fa-map"></i> Map</button>
+                        <button class="action-btn details-btn"><i class="fas fa-info-circle"></i> Details</button>
+                        <button class="action-btn share-btn"><i class="fas fa-share"></i> Share</button>
+                    </div>
+                `;
+                
+                // Add click events to action buttons
+                el.querySelector('.map-btn').addEventListener('click', () => openMap(lat, lon));
+                el.querySelector('.details-btn').addEventListener('click', () => showQuakeDetails(quake));
+                el.querySelector('.share-btn').addEventListener('click', () => shareQuake(quake));
+                
+                earthquakeList.appendChild(el);
+            });
+        }
+        
+        // Show detailed quake information
+        function showQuakeDetails(quake) {
+            const { place, mag, time, detail, url } = quake.properties;
+            const [lon, lat, depth] = quake.geometry.coordinates;
+            
+            // Create a modal or popup with detailed info
+            alert(`
+                Earthquake Details:
+                
+                Location: ${place}
+                Magnitude: ${mag}
+                Depth: ${depth.toFixed(1)} km
+                Coordinates: ${lat.toFixed(2)}°N, ${lon.toFixed(2)}°E
+                Time: ${formatDate(time)}
+                
+                More info: ${url}
+            `);
+        }
+        
+        // Update last updated time
+        function updateLastUpdated(timestamp = Date.now()) {
+            lastUpdatedEl.textContent = `Last updated: ${formatDate(timestamp)}`;
+        }
+        
+        // Request notification permission
+        function requestNotificationPermission() {
+            if (Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+                Notification.requestPermission().then(permission => {
+                    if (permission === 'granted') {
+                        console.log('Notification permission granted');
+                    }
+                });
+            }
+        }
+        
+        // Check for new significant earthquakes
+        function checkForSignificantQuakes(quakes) {
+            const lastNotifiedTime = localStorage.getItem('lastNotifiedTime');
+            const latestQuake = quakes[0];
+            
+            if (latestQuake && latestQuake.properties.mag >= MIN_ALERT_MAGNITUDE &&
+                (!lastNotifiedTime || latestQuake.properties.time > lastNotifiedTime)) {
+                
+                // Show notification if permission granted
+                if (Notification.permission === 'granted') {
+                    new Notification('Earthquake Alert - Myanmar', {
+                        body: `${latestQuake.properties.place}\nMagnitude: ${latestQuake.properties.mag.toFixed(1)}`,
+                        icon: 'https://cdn-icons-png.flaticon.com/512/3097/3097009.png'
+                    });
+                }
+                
+                // Show visual alert
+                showAlertBadge(latestQuake.properties.mag, latestQuake.properties.place);
+                
+                // Play alert sound
+                playAlertSound(latestQuake.properties.mag);
+                
+                // Store notification time
+                localStorage.setItem('lastNotifiedTime', latestQuake.properties.time);
+            }
+        }
+        
+        // Check network connectivity
+        function checkConnectivity() {
+            if (!navigator.onLine) {
+                offlineNotice.classList.add('show');
+            }
+        }
+        
+        // Set up PWA install prompt
+        function setupPWAInstall() {
+            window.addEventListener('beforeinstallprompt', (e) => {
+                // Prevent the mini-infobar from appearing on mobile
+                e.preventDefault();
+                // Stash the event so it can be triggered later
+                deferredPrompt = e;
+                // Show install button
+                installBtn.style.display = 'flex';
+                installBtnFooter.style.display = 'inline-block';
+            });
+            
+            window.addEventListener('appinstalled', () => {
+                // Hide the install button
+                installBtn.style.display = 'none';
+                installBtnFooter.style.display = 'none';
+                // Clear the deferredPrompt
+                deferredPrompt = null;
+            });
+        }
+        
+        // Install PWA
+        function installPWA() {
+            if (deferredPrompt) {
+                // Show the install prompt
+                deferredPrompt.prompt();
+                // Wait for the user to respond to the prompt
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                    // Clear the deferredPrompt
+                    deferredPrompt = null;
+                });
+            }
+        }
+        
+        // Toggle mobile navigation
+        function toggleNav() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Myanmar Coding</title>
+    <meta name="description" content="Terms and conditions for using Myanmar Coding's web development and digital services.">
+    <meta name="keywords" content="terms of service, Myanmar Coding, web development terms, digital solutions agreement">
+    <meta name="author" content="Myanmar Coding">
+    <meta property="og:title" content="Terms of Service - Myanmar Coding">
+    <meta property="og:description" content="Terms and conditions for using Myanmar Coding's services">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myanmarcoding.com/terms-of-service">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="0-02-06-9789ad94ba9a7e365a0982101f83c1962796a339657f29905c16543935388540_65ff719980b75efe.jpg" type="image/x-icon"/>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --success: #10b981;
+            --danger: #ef4444;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --gradient: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--dark);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(30, 41, 59, 0.98);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-img {
+            transform: rotate(15deg);
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--light);
+            transition: color 0.3s ease;
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        .logo:hover .logo-text {
+            color: var(--secondary);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 60%;
+        }
+
+        .nav-links .dsud {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .nav-links .dsud:hover {
+            color: var(--light);
+            background-color: var(--danger);
+        }
+
+        .nav-links .dsud::after {
+            background-color: var(--light);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 10px;
+        }
+
+        .hamburger div {
+            width: 28px;
+            height: 3px;
+            background-color: var(--light);
+            margin: 4px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Page Header */
+        .page-header {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(30, 41, 59, 0.9)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            color: var(--light);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--light), transparent);
+            z-index: 1;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .breadcrumb a {
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary);
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Terms Content */
+        .terms-content {
+            padding: 80px 0;
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 50px;
+            border: 1px solid var(--light-gray);
+        }
+
+        .terms-section {
+            margin-bottom: 40px;
+        }
+
+        .terms-section h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .terms-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .terms-section h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin: 30px 0 15px;
+        }
+
+        .terms-section p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .terms-section ul, .terms-section ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .terms-section li {
+            margin-bottom: 10px;
+            color: var(--gray);
+        }
+
+        .terms-section a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .terms-section a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background-color: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .last-updated {
+            font-style: italic;
+            color: var(--gray);
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 1.05rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .page-header {
+                height: auto;
+                padding: 100px 0;
+            }
+            
+            .terms-container {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 85%;
+                max-width: 350px;
+                height: 100vh;
+                background-color: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: right 0.4s ease;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
+            }
+
+            .terms-container {
+                padding: 30px;
+            }
+
+            .terms-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .terms-section h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 22px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .terms-container {
+                padding: 25px 20px;
+            }
+
+            .terms-section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .footer-grid {
+                gap: 40px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Myanmar<span>Coding</span></span>
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="hamburger" onclick="toggleNav()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header fade-in">
+        <div class="container page-header-content">
+            <h1>Terms of Service</h1>
+            <p>Last Updated: May 3, 2025. Please read these terms carefully before using our services.</p>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container">
+            <div class="terms-container fade-in">
+                <div class="terms-section">
+                    <h2>1. Introduction</h2>
+                    <p>Welcome to Myanmar Coding. By accessing our website and using our services, you agree to be bound by these Terms of Service ("Terms"). These Terms apply to all visitors, users, and others who access or use our services.</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Important:</strong> These terms contain important information about your legal rights. By using our services, you agree to these terms in full. If you disagree, you must not use our website or services.</p>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>2. Our Services</h2>
+                    <p>Myanmar Coding provides professional web development and digital solutions including but not limited to:</p>
+                    <ul>
+                        <li>Custom website design and development</li>
+                        <li>E-commerce solutions and online store development</li>
+                        <li>Digital marketing services</li>
+                        <li>Search engine optimization (SEO)</li>
+                        <li>Web hosting and maintenance services</li>
+                    </ul>
+                    <p>All services are subject to availability and may be modified or discontinued at our sole discretion without notice.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>3. User Responsibilities</h2>
+                    <h3>3.1 Account Security</h3>
+                    <p>When you create an account with us, you must provide accurate and complete information. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+                    
+                    <h3>3.2 Acceptable Use</h3>
+                    <p>You agree not to use our services:</p>
+                    <ul>
+                        <li>For any unlawful purpose or in violation of any laws in your jurisdiction</li>
+                        <li>To infringe upon or violate our intellectual property rights or the rights of others</li>
+                        <li>To upload or transmit viruses or any other type of malicious code</li>
+                        <li>To interfere with or disrupt the integrity or performance of our services</li>
+                        <li>To collect or track personal information of others</li>
+                        <li>For any obscene or immoral purpose</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>4. Payments and Refunds</h2>
+                    <h3>4.1 Fees</h3>
+                    <p>Our services may require payment of fees. All fees are stated in Myanmar Kyat (MMK) unless otherwise specified and are non-refundable except as required by law or at our sole discretion.</p>
+                    
+                    <h3>4.2 Payment Methods</h3>
+                    <p>We accept various payment methods including credit cards, bank transfers, and mobile payments. You agree to provide current, complete, and accurate purchase and account information for all purchases.</p>
+                    
+                    <h3>4.3 Refund Policy</h3>
+                    <p>Refund eligibility depends on the type of service purchased:</p>
+                    <ul>
+                        <li><strong>Custom Development:</strong> Partial refunds may be available if cancellation occurs early in the development process</li>
+                        <li><strong>Digital Products:</strong> Generally non-refundable unless defective</li>
+                        <li><strong>Subscription Services:</strong> Pro-rated refunds for unused periods may be available</li>
+                    </ul>
+                    <p>To request a refund, please contact us at <a href="mailto:support@myanmarcoding.com">support@myanmarcoding.com</a>.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>5. Intellectual Property</h2>
+                    <h3>5.1 Our Content</h3>
+                    <p>All content on our website, including text, graphics, logos, button icons, images, audio clips, digital downloads, and software, is our property or the property of our licensors and is protected by international copyright laws.</p>
+                    
+                    <h3>5.2 Your Content</h3>
+                    <p>You retain ownership of any content you submit through our services. By submitting content, you grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, adapt, publish, and display such content solely for the purpose of providing our services to you.</p>
+                    
+                    <h3>5.3 Copyright Complaints</h3>
+                    <p>We respect intellectual property rights. If you believe your work has been copied in a way that constitutes copyright infringement, please contact us at <a href="mailto:copyright@myanmarcoding.com">copyright@myanmarcoding.com</a> with the following information:</p>
+                    <ol>
+                        <li>A description of the copyrighted work you claim has been infringed</li>
+                        <li>The exact location of the allegedly infringing material on our service</li>
+                        <li>Your contact information including address, telephone number, and email</li>
+                        <li>A statement that you have a good faith belief the disputed use is not authorized</li>
+                        <li>A statement made under penalty of perjury that the information provided is accurate</li>
+                    </ol>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>6. Service Modifications and Availability</h2>
+                    <p>We reserve the right to:</p>
+                    <ul>
+                        <li>Modify or discontinue any service at any time without notice</li>
+                        <li>Refuse service to anyone for any reason at any time</li>
+                        <li>Change prices for our services at any time</li>
+                        <li>Modify or discontinue any promotion at any time</li>
+                    </ul>
+                    <p>We shall not be liable to you or any third party for any modification, price change, suspension, or discontinuance of our services.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>7. Third-Party Links and Services</h2>
+                    <p>Our services may contain links to third-party websites or services that are not owned or controlled by Myanmar Coding. We have no control over, and assume no responsibility for:</p>
+                    <ul>
+                        <li>The content, privacy policies, or practices of any third-party sites or services</li>
+                        <li>Any damages or losses caused or alleged to be caused by use of such content, goods, or services</li>
+                    </ul>
+                    <p>We strongly advise you to read the terms and conditions and privacy policies of any third-party sites or services you visit.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>8. Limitation of Liability</h2>
+                    <p>To the maximum extent permitted by applicable law, Myanmar Coding shall not be liable for:</p>
+                    <ul>
+                        <li>Any indirect, incidental, special, consequential, or punitive damages</li>
+                        <li>Loss of profits, revenue, data, use, goodwill, or other intangible losses</li>
+                        <li>Damages related to unauthorized access to or alteration of your transmissions or data</li>
+                        <li>Statements or conduct of any third party on our services</li>
+                    </ul>
+                    <p>Our total liability for any claims under these Terms shall not exceed the amount you paid us in the six months preceding the claim.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>9. Dispute Resolution</h2>
+                    <h3>9.1 Governing Law</h3>
+                    <p>These Terms shall be governed by and construed in accordance with the laws of Myanmar without regard to its conflict of law provisions.</p>
+                    
+                    <h3>9.2 Arbitration</h3>
+                    <p>Any dispute arising from these Terms shall be resolved through binding arbitration in Yangon, Myanmar. The arbitration shall be conducted in English, and the arbitrator's decision shall be final and binding.</p>
+                    
+                    <h3>9.3 Class Action Waiver</h3>
+                    <p>You agree to resolve disputes on an individual basis and waive any right to participate in class actions or class arbitrations.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>10. General Provisions</h2>
+                    <h3>10.1 Entire Agreement</h3>
+                    <p>These Terms constitute the entire agreement between you and Myanmar Coding regarding our services and supersede all prior agreements and understandings.</p>
+                    
+                    <h3>10.2 Severability</h3>
+                    <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect.</p>
+                    
+                    <h3>10.3 Waiver</h3>
+                    <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.</p>
+                    
+                    <h3>10.4 Force Majeure</h3>
+                    <p>We shall not be liable for any failure to perform due to causes beyond our reasonable control including natural disasters, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, or internet outages.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>11. Changes to These Terms</h2>
+                    <p>We reserve the right to modify these Terms at any time. We will provide notice of significant changes through our website or by email. Your continued use of our services after changes constitutes acceptance of the new Terms.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>12. Contact Us</h2>
+                    <p>For questions about these Terms, please contact us at:</p>
+                    <p>
+                    Facebook: <a href="https://www.facebook.com/share/1AxuznoDDY/">Myanmar Coding</a><br>
+                    Instagram: <a href="https://www.instagram.com/myanmarcoding?igsh=MWhncGw3cWJiNDF3aw==">@myanmarcoding</a><br>
+                    Tiktok: <a href="https://www.tiktok.com/@myanmarcoding">@myanmarcoding</a><br>
+                    Email: <a href="mailto:myanmarcoding@gmail.com">myanmarcoding@gmail.com</a><br>
+                    Phone: <a href="tel:+959796200867">+95 9 796 200 867</a>
+                    </p>
+                </div>
+                
+                <p class="last-updated">Last updated: May 3, 2025</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Myanmar Coding</h3>
+                    <p>Transforming ideas into powerful digital experiences since 2019. We're committed to delivering exceptional results for our clients.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1AxuznoDDY/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/myanmarcoding?igsh=MWhncGw3cWJiNDF3aw=="><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@myanmarcoding"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@therealmyanmarcoding"><i class="fab fa-youtube"></i></a>
+                </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="aboutus.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-server"></i> Services</a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                        <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+                        <li><a href="shop.html"><i class="fas fa-shopping-cart"></i> Shop</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#web-development"><i class="fas fa-code"></i> Web Development</a></li>
+                        <li><a href="services.html#ecommerce"><i class="fas fa-store"></i> E-Commerce</a></li>
+                        <li style="text-decoration: line-through;"><a style="text-decoration: line-through;"><i class="fas fa-mobile-alt"></i> Mobile Apps</a></li>
+                        <li><a href="services.html#seo"><i class="fas fa-search"></i> SEO</a></li>
+                        <li><a href="services.html#marketing"><i class="fas fa-bullhorn"></i> Digital Marketing</a></li>
+                        <li><a href="services.html#hosting"><i class="fas fa-server"></i> Web Hosting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a><i class="fas fa-map-marker-alt"></i> Nay Pyi Taw, Myanmar</a></li>
+                        <li><a><i class="fas fa-map-marker-alt"></i> Mandalay, Myanmar</a></li>
+                        <li><a><i class="fas fa-map-marker-alt"></i> Yangon, Myanmar</a></li>
+                        <li><a href="tel:+959796200867"><i class="fas fa-phone"></i> +95 9 796 200 867</a></li>
+                        <li><a href="mailto:info.myanmarcoding@gmail.com"><i class="fas fa-envelope"></i>Myanmar Coding</a></li>
+                        <li><a href="contact.html"><i class="fas fa-comments"></i> Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Myanmar Coding. All Rights Reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a> | <a href="sitemap.html">Sitemap</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        function toggleNav() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.querySelector('.nav-links');
+                const hamburger = document.querySelector('.hamburger');
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            fadeObserver.observe(element);
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myanmar Coding - View Our Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" href="MC.png" type="image/x-icon"/>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #373737;
+            line-height: 1.6;
+            background-color: #E6E6E6;
+        }
+
+        header {
+            background-color: #000000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 24px;
+            color: #E6E6E6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #373737;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #E6E6E6;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: #000000;
+            background-color: #E6E6E6;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #E6E6E6;
+            margin: 4px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background-color: #000000;
+                padding: 10px 0;
+                margin-top: 10px;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 10px;
+                border-radius: 0;
+            }
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        h2, h3 {
+            color: #000000;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #373737;
+        }
+
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background: #000000;
+            margin: 40px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            color: #E6E6E6;
+            background-color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            color: #E6E6E6;
+            background-color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            color: #E6E6E6;
+            background-color: #000000;
+        }
+
+        footer a {
+            color: #E6E6E6;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .project-card {
+            background: #E6E6E6;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid #373737;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #373737;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            font-size: 24px;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            font-size: 16px;
+            color: #373737;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            color: #E6E6E6;
+            background-color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .contact-us-text {
+                font-size: 20px;
+                margin-top: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Myanmar Coding</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="shop.html">Shop</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Explore Our Work: Websites That Inspire</h1>
+            <p>Take a look at some of the websites we’ve designed and developed for our clients. Each project reflects our commitment to creativity, functionality, and results.</p>
+            <p>At Myanmar Coding, we take pride in delivering websites that not only look great but also drive real results for our clients. Our portfolio showcases a variety of projects across different industries, each tailored to meet unique business needs.</p>
+            <p>From sleek and modern designs to robust e-commerce platforms, our work speaks for itself. Here’s a glimpse of what we can do for you:</p>
+            
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <img src="project1.png" alt="Flick Orbit Movies">
+                    <div class="project-content">
+                        <h3>Flick Orbit Movies Website</h3>
+                        <p>A Website That Shows Movies For Free</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="project2.png" alt="Tic Tac Toe">
+                    <div class="project-content">
+                        <h3>Tic Tac Toe Website</h3>
+                        <p>Tic Tac Toe Game Website</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="project4.png" alt="Squid Game Guard CV">
+                    <div class="project-content">
+                        <h3>Squid Game Guard CV Form Website</h3>
+                        <p>Squid Game Guard CV Form Website</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 Myanmar Coding. All rights reserved.
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('nav');
+            const hamburger = document.querySelector('.hamburger');
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
