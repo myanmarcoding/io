@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Myanmar Coding - Professional Web Development & Digital Services</title>
+    <title>Myanmar Coding - Web Development & Digital Services</title>
     <meta name="description" content="Comprehensive digital solutions including web development, e-commerce, mobile apps, SEO, and digital marketing services in Myanmar.">
     <meta name="keywords" content="web development Myanmar, e-commerce solutions, mobile app development, SEO services, digital marketing Myanmar">
     <meta name="author" content="Myanmar Coding">
@@ -30,6 +30,7 @@
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --gradient: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -38,13 +39,16 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--dark);
             line-height: 1.6;
             background-color: var(--light);
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
         .container {
@@ -62,7 +66,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: var(--shadow);
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         header.scrolled {
@@ -99,7 +103,7 @@
             font-size: 26px;
             font-weight: 700;
             color: var(--light);
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
 
         .logo-text span {
@@ -129,7 +133,7 @@
             font-weight: 500;
             padding: 8px 15px;
             border-radius: 6px;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             position: relative;
         }
 
@@ -181,7 +185,7 @@
             height: 3px;
             background-color: var(--light);
             margin: 4px 0;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             border-radius: 3px;
         }
 
@@ -200,8 +204,8 @@
         /* Hero Section */
         .hero {
             position: relative;
-            height: 60vh;
-            min-height: 500px;
+            height: 70vh;
+            min-height: 600px;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(30, 41, 59, 0.9)), url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
@@ -260,7 +264,7 @@
             border-radius: 8px;
             font-weight: 500;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             cursor: pointer;
             border: none;
             font-size: 1rem;
@@ -347,8 +351,9 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: all 0.4s ease;
+            transition: var(--transition);
             border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
         }
 
         .service-card:hover {
@@ -411,7 +416,7 @@
             color: var(--primary);
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             font-size: 1.05rem;
         }
 
@@ -499,7 +504,7 @@
             border-radius: 12px;
             padding: 40px 30px;
             box-shadow: var(--shadow);
-            transition: all 0.4s ease;
+            transition: var(--transition);
             text-align: center;
             border: 1px solid rgba(0,0,0,0.05);
         }
@@ -702,7 +707,7 @@
         .footer-links a {
             color: var(--light-gray);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             display: inline-block;
             font-size: 1.05rem;
         }
@@ -734,7 +739,7 @@
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.1);
             color: var(--light);
-            transition: all 0.3s ease;
+            transition: var(--transition);
             font-size: 1.1rem;
         }
 
@@ -755,7 +760,7 @@
         .footer-bottom a {
             color: var(--secondary);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .footer-bottom a:hover {
@@ -779,7 +784,7 @@
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             z-index: 999;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
@@ -792,6 +797,311 @@
         .back-to-top:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        /* New Features Styles */
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f1f5f9;
+        }
+
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 20px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--light-gray);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: var(--gray);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background: var(--gradient);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background-color: var(--dark);
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .stat-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--secondary);
+        }
+
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            z-index: 998;
+            transition: var(--transition);
+        }
+
+        .chat-widget:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-box {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            width: 350px;
+            height: 450px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 997;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .chat-box.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .chat-header {
+            padding: 15px 20px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 80%;
+        }
+
+        .chat-message.bot {
+            background-color: var(--light-gray);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-message.user {
+            background-color: var(--primary);
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chat-footer {
+            padding: 15px;
+            border-top: 1px solid var(--light-gray);
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+
+        .chat-send {
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chat-send:hover {
+            background: var(--primary-dark);
         }
 
         /* Responsive Styles */
@@ -819,6 +1129,10 @@
                 width: 100%;
                 max-width: 400px;
                 margin-bottom: 30px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
             }
         }
 
@@ -864,6 +1178,18 @@
             .cta h2 {
                 font-size: 2.2rem;
             }
+            
+            .chat-box {
+                width: 300px;
+                height: 400px;
+                left: 20px;
+                bottom: 90px;
+            }
+            
+            .chat-widget {
+                left: 20px;
+                bottom: 20px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -889,6 +1215,14 @@
             
             .pricing-card.popular {
                 transform: scale(1);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .newsletter h2 {
+                font-size: 2rem;
             }
         }
 
@@ -1020,7 +1354,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .cookie-accept {
@@ -1036,6 +1370,15 @@
 
         .cookie-btn:hover {
             transform: translateY(-2px);
+        }
+        
+        /* Text Center Utility */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-50 {
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -1064,7 +1407,7 @@
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                
+
                 <div class="hamburger" onclick="toggleNav()">
                     <div></div>
                     <div></div>
@@ -1206,6 +1549,30 @@
         </div>
     </section>
 
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="200">0</div>
+                    <div class="stat-text">Projects Completed</div>
+                </div>
+                <div class="stat-item fade-in delay-1">
+                    <div class="stat-number" data-count="95">0</div>
+                    <div class="stat-text">Happy Clients</div>
+                </div>
+                <div class="stat-item fade-in delay-2">
+                    <div class="stat-number" data-count="5">0</div>
+                    <div class="stat-text">Years Experience</div>
+                </div>
+                <div class="stat-item fade-in delay-3">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-text">Team Members</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Process Section -->
     <section class="section process">
         <div class="container">
@@ -1260,7 +1627,7 @@
             <div class="pricing-grid">
                 <div class="pricing-card fade-in delay-1">
                     <h3>Starter</h3>
-                    <div class="price">$100<span>/project</span></div>
+                    <div class="price">$30<span>/project</span></div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> 5-10 Page Website</li>
                         <li><i class="fas fa-check"></i> Responsive Design</li>
@@ -1273,7 +1640,7 @@
                 
                 <div class="pricing-card popular fade-in delay-2">
                     <h3>Business</h3>
-                    <div class="price">$300<span>/project</span></div>
+                    <div class="price">$65<span>/project</span></div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> 15-25 Page Website</li>
                         <li><i class="fas fa-check"></i> CMS Integration</li>
@@ -1286,7 +1653,7 @@
                 
                 <div class="pricing-card fade-in delay-3">
                     <h3>Enterprise</h3>
-                    <div class="price">600$<span>/project</span></div>
+                    <div class="price">100$<span>/project</span></div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> Custom Web Application</li>
                         <li><i class="fas fa-check"></i> E-Commerce Functionality</li>
@@ -1457,6 +1824,31 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h3>Chat with Us</h3>
+            <button class="chat-close" id="chatClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                Hello! How can we help you today?
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+            <button class="chat-send" id="chatSend">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
     <!-- Cookie Consent -->
     <div class="cookie-consent" id="cookieConsent">
         <p>We use cookies to ensure you get the best experience on our website. <a href="privacy-policy.html">Learn more</a></p>
@@ -1594,6 +1986,138 @@
                     });
                 }
             });
+        });
+
+        // New Features
+
+        // Testimonial Slider
+        const testimonialTrack = document.getElementById('testimonialTrack');
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+
+        function goToSlide(index) {
+            testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
+            sliderDots.forEach(dot => dot.classList.remove('active'));
+            sliderDots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        sliderDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const slideIndex = parseInt(dot.getAttribute('data-slide'));
+                goToSlide(slideIndex);
+            });
+        });
+
+        // Auto slide testimonials
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % sliderDots.length;
+            goToSlide(currentSlide);
+        }, 5000);
+
+        // Animated Stats Counter
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const count = parseInt(target.getAttribute('data-count'));
+                    const duration = 2000; // 2 seconds
+                    const step = count / (duration / 16); // 60fps
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= count) {
+                            clearInterval(timer);
+                            current = count;
+                        }
+                        target.textContent = Math.floor(current);
+                    }, 16);
+                    
+                    statObserver.unobserve(target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNumbers.forEach(number => {
+            statObserver.observe(number);
+        });
+
+        // Chat Widget
+        const chatWidget = document.getElementById('chatWidget');
+        const chatBox = document.getElementById('chatBox');
+        const chatClose = document.getElementById('chatClose');
+        const chatBody = document.getElementById('chatBody');
+        const chatInput = document.getElementById('chatInput');
+        const chatSend = document.getElementById('chatSend');
+
+        chatWidget.addEventListener('click', () => {
+            chatBox.classList.toggle('active');
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatBox.classList.remove('active');
+        });
+
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${isUser ? 'user' : 'bot'}`;
+            messageDiv.textContent = text;
+            chatBody.appendChild(messageDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        chatSend.addEventListener('click', () => {
+            const message = chatInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                chatInput.value = '';
+                
+                // Simulate bot response
+                setTimeout(() => {
+                    const responses = [
+                        "Thanks for your message! Our team will get back to you soon.",
+                        "That's a great question! Let me connect you with one of our specialists.",
+                        "I understand your concern. We have solutions for that.",
+                        "We'd love to help with that. Can you provide more details?"
+                    ];
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addMessage(randomResponse);
+                }, 1000);
+            }
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                chatSend.click();
+            }
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+
+        // Newsletter Form
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input').value;
+            alert(`Thank you for subscribing with ${email}!`);
+            newsletterForm.reset();
         });
     </script>
 </body>
